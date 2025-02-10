@@ -59,8 +59,14 @@ function onSearch(evt) {
             refreshPage.refresh();
         })
         .catch(err => {
+
             loader.style.display = 'none';
-            console.log(`${err}`)
+
+            iziToast.error({
+                title: 'Error',
+                message: 'Something went wrong. Please try again later!',
+            });
+
         });
     form.reset();
 }
